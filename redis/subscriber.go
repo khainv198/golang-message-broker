@@ -1,4 +1,4 @@
-package redispubsub
+package adapterredis
 
 import (
 	"context"

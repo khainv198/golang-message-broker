@@ -1,4 +1,4 @@
-package natspubsub
+package adapternats
 
 import (
 	messagebroker "github.com/khainv198/golang-message-broker"

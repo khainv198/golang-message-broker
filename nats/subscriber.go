@@ -1,4 +1,4 @@
-package natspubsub
+package adapternats
 
 import (
 	"context"
@@ -17,7 +17,7 @@ func newSubscriber(nc *nats.Conn) messagebroker.Subscriber {
 
 func (s subscriber) Subscribe(ctx context.Context, subject string, handler messagebroker.HandlerFunc) error {
 	_, err := s.nc.Subscribe(subject, func(msg *nats.Msg) {
-		handler(ctx, subject, msg)
+		handler(ctx, subject, msg.Data)
 	})
 	return err
 }
